@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Room Cancellation</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>ROOM CANCELLATION</h1>
+    </div>
+
+    <div class="container">
+        <form id="cancellationForm">
+            <label for="roomNumber">Room Number:</label>
+            <input type="number" id="roomNumber" name="roomNumber" required>
+
+            <label for="uin">UIN:</label>
+            <input type="text" id="uin" name="uin" required>
+
+            <label for="reason">Reason for Cancellation:</label>
+            <textarea id="reason" name="reason" rows="4" cols="85"></textarea>
+
+            <button type="button" onclick="submitCancellation()">Submit Cancellation</button>
+        </form>
+    </div>
+
+    <script>
+        function submitCancellation() {
+            const roomNumber = document.getElementById("roomNumber").value;
+            const uin = document.getElementById("uin").value;
+            const reason = document.getElementById("reason").value;
+            console.log('Submitting Cancellation:', {roomNumber, uin})
+            // Send cancellation data to the backend for processing
+            fetch('http://localhost:3000/api/cancel-room', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ roomNumber, uin, cancellationReason: reason }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Check the response from the backend
+                if (data.message) {
+                    // Room cancellation successful
+                    alert(data.message);
+                } else {
+                    // Room cancellation failed
+                    alert('Room cancellation failed. Please check your details and try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error during room cancellation:', error);
+                alert('An error occurred during room cancellation. Please try again later.');
+            });
+        }
+    </script>
+</body>
+
+</html>

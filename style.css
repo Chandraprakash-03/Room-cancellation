@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'Tommy-Light';
+    src: url('https://ik.imagekit.io/026k2i7ys/fonts/MADE%20TOMMY%20Light_PERSONAL%20USE.woff?updatedAt=1705584800309') format('woff');
+    }
+
+@font-face {
+    font-family: 'Tommy-Black';
+    src: url('https://ik.imagekit.io/026k2i7ys/fonts/MADE%20TOMMY%20Black_PERSONAL%20USE.woff?updatedAt=1705584800352') format('woff');
+    }
+
+@font-face {
+    font-family: 'Tommy-Medium';
+    src: url('https://ik.imagekit.io/026k2i7ys/fonts/MADE%20TOMMY%20Medium_PERSONAL%20USE.woff?updatedAt=1705584800728') format('woff');
+    }
+
+@font-face {
+    font-family: 'Tommy-ExtraBold';
+    src: url('https://ik.imagekit.io/026k2i7ys/fonts/MADE%20TOMMY%20ExtraBold_PERSONAL%20USE.woff?updatedAt=1705584800762') format('woff');
+    } 
+
+@font-face {
+    font-family: 'Tommy-Regular';
+    src: url('https://ik.imagekit.io/026k2i7ys/fonts/MADE%20TOMMY%20Regular_PERSONAL%20USE.woff?updatedAt=1705584800828') format('woff');
+    } 
+
+@font-face {
+    font-family: 'Tommy-Thin';
+    src: url('https://ik.imagekit.io/026k2i7ys/fonts/MADE%20TOMMY%20Thin_PERSONAL%20USE.woff?updatedAt=1705584800910') format('woff');
+    }
+
+@font-face {
+    font-family: 'Tommy-Bold';
+    src: url('https://ik.imagekit.io/026k2i7ys/fonts/MADE%20TOMMY%20Thin_PERSONAL%20USE.woff?updatedAt=1705584800910') format('woff');
+    }
+
+*{
+    font-family: 'Tommy-Regular';
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input,
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+@media screen and (max-width: 600px) {
+    .uin-section,
+    .mrn-verification,
+    #bookingForm {
+        width: 80%;
+    }
+}
